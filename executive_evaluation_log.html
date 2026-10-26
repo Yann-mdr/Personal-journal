@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Evaluation Log</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Playfair Display for elegant serif headings, Inter for clean body text -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#111111',
+                            dark: '#333333',
+                            gray: '#666666',
+                            light: '#f5f5f5',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Elegant smooth fade for tab transitions */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Editorial Drop Cap for the first paragraph of an article */
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 3.5rem;
+            line-height: 0.8;
+            padding-right: 0.5rem;
+            padding-top: 0.2rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #111111;
+        }
+    </style>
+</head>
+<body class="bg-white text-brand-dark antialiased min-h-screen flex flex-col">
+
+    <!-- HEADER / MASTHEAD -->
+    <header class="pt-12 pb-6 border-b border-gray-200">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-xs font-semibold tracking-[0.2em] text-gray-400 uppercase mb-4">Weekly Evaluation Log</p>
+            <h1 class="font-serif text-4xl md:text-5xl font-bold text-brand-black tracking-tight mb-2">The Executive Briefing.</h1>
+            <p class="text-sm text-gray-500 italic font-serif mt-4">"Disiplin adalah jembatan antara tujuan dan pencapaian."</p>
+        </div>
+    </header>
+
+    <!-- NAVIGATION TABS -->
+    <nav class="border-b border-gray-200 sticky top-0 bg-white/95 backdrop-blur z-10">
+        <div class="max-w-4xl mx-auto px-6">
+            <ul class="flex justify-center space-x-8 md:space-x-16">
+                <li>
+                    <button onclick="openTab('tier-s', this)" class="tab-btn active font-sans text-sm font-semibold tracking-wider text-brand-black border-b-2 border-brand-black py-4 uppercase transition-colors">
+                        Tier S <span class="hidden md:inline text-xs font-normal text-gray-500 ml-1">UTBK 2027</span>
+                    </button>
+                </li>
+                <li>
+                    <button onclick="openTab('tier-a', this)" class="tab-btn font-sans text-sm font-semibold tracking-wider text-gray-400 hover:text-brand-black border-b-2 border-transparent py-4 uppercase transition-colors">
+                        Tier A <span class="hidden md:inline text-xs font-normal text-gray-500 ml-1">Skill Ops</span>
+                    </button>
+                </li>
+                <li>
+                    <button onclick="openTab('tier-c', this)" class="tab-btn font-sans text-sm font-semibold tracking-wider text-gray-400 hover:text-brand-black border-b-2 border-transparent py-4 uppercase transition-colors">
+                        Tier C <span class="hidden md:inline text-xs font-normal text-gray-500 ml-1">Physical</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-grow max-w-4xl mx-auto px-6 py-12 w-full">
+
+        <!-- ============================================== -->
+        <!-- TIER S: UTBK PREPARATION -->
+        <!-- ============================================== -->
+        <article id="tier-s" class="tab-content active">
+            <header class="mb-10 text-center">
+                <span class="text-xs font-bold tracking-[0.15em] text-gray-400 uppercase">Target Utama</span>
+                <h2 class="font-serif text-3xl font-bold text-brand-black mt-2 mb-4">Strategic Academic Preparation: UTBK 2027</h2>
+                <div class="w-16 h-[1px] bg-brand-black mx-auto"></div>
+            </header>
+
+            <!-- Weekly Release Note / Newsletter Format -->
+            <div class="space-y-8">
+                <div class="border border-gray-100 rounded-sm p-8 bg-brand-light/30 shadow-sm">
+                    <p class="text-xs font-semibold tracking-widest text-gray-500 mb-4">WEEK 4 — OCTOBER 2026</p>
+                    <h3 class="font-serif text-2xl font-bold mb-6 leading-snug">Optimalisasi 28 Jam: Evaluasi TryOut Penalaran Kuantitatif</h3>
+                    
+                    <div class="font-sans text-gray-700 leading-relaxed space-y-5 text-sm md:text-base">
+                        <p class="drop-cap">
+                            Evaluasi minggu ini berfokus pada efisiensi alokasi 28 jam belajar mingguan yang telah ditetapkan. Berdasarkan hasil simulasi TryOut mandiri akhir pekan, terdapat anomali pada akurasi penyelesaian soal Penalaran Kuantitatif di menit-menit akhir ujian, mengindikasikan adanya penurunan fokus *(cognitive fatigue)*.
+                        </p>
+                        <p>
+                            Strategi mitigasi untuk minggu depan adalah menerapkan metode *interleaving* dan memodifikasi *time-blocking*. Daripada menyelesaikan satu modul selama 3 jam berturut-turut, sesi akan dipecah menjadi blok 90 menit dengan jeda evaluasi mikro. Secara keseluruhan, pemahaman konsep fundamental sudah berada di angka 85%, sesuai dengan target kuartal ini.
+                        </p>
+                        
+                        <div class="my-8 pl-6 border-l-2 border-brand-black italic text-gray-600 font-serif">
+                            "Kelemahan bukan pada pemahaman rumus, melainkan pada ketahanan fokus di jam kedua simulasi. Penyesuaian jadwal harian mutlak diperlukan."
+                        </div>
+
+                        <h4 class="font-bold text-brand-black tracking-wide text-xs uppercase mt-6 mb-3">Key Takeaways & Action Plan:</h4>
+                        <ul class="list-none space-y-2">
+                            <li class="flex items-start">
+                                <span class="mr-3 text-gray-400">•</span>
+                                <span><strong>Pencapaian:</strong> Konsistensi 28 jam/minggu tercapai dengan deviasi kurang dari 5%.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 text-gray-400">•</span>
+                                <span><strong>Evaluasi:</strong> Akurasi Penalaran Kuantitatif turun 15% di 30 menit terakhir TO.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 text-gray-400">•</span>
+                                <span><strong>Taktik Lanjutan:</strong> Implementasi *Pomodoro* (50/10) khusus untuk simulasi hitungan panjang, mulai Senin depan.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Previous Weeks Log (Minimalist Archive) -->
+                <div class="mt-12">
+                    <h4 class="font-serif text-lg font-bold border-b border-gray-200 pb-2 mb-4">Arsip Evaluasi Sebelumnya</h4>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between items-center py-2 hover:bg-gray-50 px-2 transition group cursor-pointer border-b border-gray-100">
+                            <span class="font-sans text-sm text-gray-600 group-hover:text-brand-black">Week 3: Fondasi Literasi Bahasa Indonesia & Taktik Membaca Cepat</span>
+                            <span class="text-xs text-gray-400 font-mono">OCT 18, 2026</span>
+                        </li>
+                        <li class="flex justify-between items-center py-2 hover:bg-gray-50 px-2 transition group cursor-pointer border-b border-gray-100">
+                            <span class="font-sans text-sm text-gray-600 group-hover:text-brand-black">Week 2: Setup Jadwal 28 Jam & Pemetaan Materi Esensial</span>
+                            <span class="text-xs text-gray-400 font-mono">OCT 11, 2026</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <!-- ============================================== -->
+        <!-- TIER A: SKILL EXPLORATION -->
+        <!-- ============================================== -->
+        <article id="tier-a" class="tab-content">
+            <header class="mb-10 text-center">
+                <span class="text-xs font-bold tracking-[0.15em] text-gray-400 uppercase">Pengembangan Diri</span>
+                <h2 class="font-serif text-3xl font-bold text-brand-black mt-2 mb-4">Professional Competency & Skill Acquisition</h2>
+                <div class="w-16 h-[1px] bg-brand-black mx-auto"></div>
+            </header>
+
+            <div class="space-y-8">
+                <div class="border border-gray-100 rounded-sm p-8 bg-brand-light/30 shadow-sm">
+                    <p class="text-xs font-semibold tracking-widest text-gray-500 mb-4">WEEK 4 — OCTOBER 2026</p>
+                    <h3 class="font-serif text-2xl font-bold mb-6 leading-snug">Eksplorasi Analitik: Menerjemahkan Logika ke dalam Praktik</h3>
+                    
+                    <div class="font-sans text-gray-700 leading-relaxed space-y-5 text-sm md:text-base">
+                        <p class="drop-cap">
+                            Di samping tuntutan akademis, eksplorasi kemampuan tingkat menengah (Tier A) minggu ini diarahkan pada pemahaman *computational thinking* dasar. Tujuannya bukan untuk menjadi ahli dalam semalam, melainkan melatih otak untuk membedah masalah besar menjadi komponen-komponen kecil yang dapat diselesaikan secara sistematis.
+                        </p>
+                        <p>
+                            Pencapaian utama minggu ini adalah merancang alur kerja dan mendokumentasikan proses di lingkungan digital (seperti repositori atau jurnal ini). Kendala terbesar adalah mengalahkan perfeksionisme saat mencoba mempraktikkan konsep baru.
+                        </p>
+                        
+                        <h4 class="font-bold text-brand-black tracking-wide text-xs uppercase mt-6 mb-3">Progress Report:</h4>
+                        <ul class="list-none space-y-2">
+                            <li class="flex items-start">
+                                <span class="mr-3 text-gray-400">•</span>
+                                <span><strong>Fokus:</strong> Pemahaman logika terstruktur dan literasi digital dasar.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 text-gray-400">•</span>
+                                <span><strong>Evaluasi:</strong> Terlalu banyak membaca teori, kurang eksekusi langsung. Harus mengubah rasio belajar menjadi 30% teori, 70% praktik.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ============================================== -->
+        <!-- TIER C: PHYSICAL ROUTINE -->
+        <!-- ============================================== -->
+        <article id="tier-c" class="tab-content">
+            <header class="mb-10 text-center">
+                <span class="text-xs font-bold tracking-[0.15em] text-gray-400 uppercase">Pemeliharaan Kinerja</span>
+                <h2 class="font-serif text-3xl font-bold text-brand-black mt-2 mb-4">Physical Maintenance & Endurance</h2>
+                <div class="w-16 h-[1px] bg-brand-black mx-auto"></div>
+            </header>
+
+            <div class="space-y-8">
+                <div class="border border-gray-100 rounded-sm p-8 bg-brand-light/30 shadow-sm">
+                    <p class="text-xs font-semibold tracking-widest text-gray-500 mb-4">WEEK 4 — OCTOBER 2026</p>
+                    <h3 class="font-serif text-2xl font-bold mb-6 leading-snug">Sustained Output: Manajemen Kelelahan pada Sesi Gym & Lari</h3>
+                    
+                    <div class="font-sans text-gray-700 leading-relaxed space-y-5 text-sm md:text-base">
+                        <p class="drop-cap">
+                            Kinerja intelektual yang tajam membutuhkan fondasi fisik yang solid. Laporan Tier C minggu ini mencatat konsistensi penuh pada jadwal Gym dan sesi lari mingguan. Fokus utama adalah *progressive overload* yang terukur tanpa mengorbankan energi untuk studi Tier S.
+                        </p>
+                        <p>
+                            Pada sesi lari hari Kamis, metrik menunjukkan perbaikan *pace* rata-rata sebesar 15 detik/km dengan detak jantung zona 2 yang lebih stabil. Namun, sesi angkat beban hari Sabtu menunjukkan sedikit penurunan tenaga, kemungkinan besar akibat kurang tidur pasca tryout.
+                        </p>
+                        
+                        <div class="my-8 pl-6 border-l-2 border-brand-black italic text-gray-600 font-serif">
+                            "Pemulihan (Recovery) adalah bagian dari latihan. Kurangnya jam tidur langsung berdampak pada output tenaga esok harinya."
+                        </div>
+
+                        <h4 class="font-bold text-brand-black tracking-wide text-xs uppercase mt-6 mb-3">Metrics & Adjustment:</h4>
+                        <ul class="list-none space-y-2">
+                            <li class="flex items-start">
+                                <span class="mr-3 text-gray-400">•</span>
+                                <span><strong>Lari (Cardio):</strong> Total jarak 15km minggu ini. Target minggu depan: Pertahankan zona 2.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 text-gray-400">•</span>
+                                <span><strong>Gym (Strength):</strong> Intensitas dijaga pada 8 RPE (Rate of Perceived Exertion) untuk menghindari *burnout* sistem saraf.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 text-gray-400">•</span>
+                                <span><strong>Tindakan:</strong> Penyesuaian jam tidur minimal 7 jam/malam harus ditegakkan lebih ketat.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-gray-200 mt-12 py-8 text-center bg-gray-50/50">
+        <p class="text-xs text-gray-400 font-sans tracking-wide">
+            © 2026 EXECUTIVE EVALUATION LOG. DOCUMENTED FOR CONTINUOUS GROWTH.
+        </p>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        function openTab(tabId, element) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active state from all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('text-brand-black', 'border-brand-black');
+                btn.classList.add('text-gray-400', 'border-transparent');
+            });
+
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+
+            // Add active state to clicked button
+            element.classList.remove('text-gray-400', 'border-transparent');
+            element.classList.add('text-brand-black', 'border-brand-black');
+        }
+    </script>
+</body>
+</html>
